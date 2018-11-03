@@ -39,7 +39,7 @@ export class WeatherComponent {
         if(this.threeDay){
             for (let entry of data) {
                 this.temp = entry['main'];
-                //Info en intervalos de 3 horas, cada 8 horas es un dia y paso a la posicion siguiente
+                //Info en intervalos de 3 horas, cada 8 intervalos es un dia y paso a la posicion siguiente
                 if (count % 8 == 0 && count != 0){
                     pos++;
                     this.threeDayWeather.tempMax[pos]=-100;
