@@ -1,0 +1,42 @@
+<div align="center">
+    <div>
+        <p>Select state</p>
+        <button id="btnStateMdz" (click)="setState('mendoza')">Mendoza</button>
+        <button id="btnStateBsAs" (click)="setState('buenos aires')">Buenos Aires</button>
+    </div>
+    <div>
+        <p>Select Day:</p>
+        <button id="btnDayToday" (click)="setDay('today')">Today</button>
+        <button id="btnDayThreeDay" (click)="setDay('threeDay')">Next three days</button>
+    </div>
+    <div *ngIf="today">
+        <br>
+        Today Weather for {{ state }}:
+        <br>
+        Temperature: {{ weatherData['temp'] }} ºC
+        <br>
+        Humidity: {{ weatherData['humidity'] }} %
+        <br>
+        Wind Speed: {{ weatherWind['speed'] }} km/h
+    </div>
+    <div *ngIf="threeDay">
+
+            <p>Next 3 days weather for {{ state }}:</p>
+            <br>
+            <div>
+                Day 1:
+                <p>Max Temperature: {{ threeDayWeather.tempMax[0] }}</p>
+                <p>Min Temperature: {{ threeDayWeather.tempMin[0] }}</p>
+            </div>
+            <div>
+                Day 2:
+                <p>Max Temperature: {{ threeDayWeather.tempMax[1] }}</p>
+                <p>Min Temperature: {{ threeDayWeather.tempMin[1] }}</p>
+            </div>
+            <div>
+                Day 3:
+                <p>Max Temperature: {{ threeDayWeather.tempMax[2] }}</p>
+                <p>Min Temperature: {{ threeDayWeather.tempMin[2] }}</p>
+            </div>
+        </div>
+</div>
